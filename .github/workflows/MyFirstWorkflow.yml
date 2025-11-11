@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 jobs:
   first_job:
     name: My First Job
@@ -12,7 +13,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4.1.0
       - name: Print greeting
-        run: echo "Hello World from ${{ github.actor }}"
+        run: |
+          echo "Hello World from ${{ vars.WHO_TO_GREET }}"
+          echo "My secret is ${{ secrets.MY_SECRET }}."
       - name: Show Directories
         run: tree
       
