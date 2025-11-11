@@ -15,7 +15,7 @@ jobs:
       - name: Print greeting
         run: |
           echo "Hello World from ${{ vars.WHO_TO_GREET }}"
-          echo "My secret is ${{ secrets.MY_SECRET }}."
+          echo "My secret is ${{ secrets.SECRET_NAME }}."
       - name: Show Directories
         run: tree
       
